@@ -1,0 +1,125 @@
+﻿<Window x:Class="CSharpPlay.Authorization.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:CSharpPlay.Authorization.ViewModel"
+        Title="Twitter Authorization"
+        Height="340" Width="540">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Step 1 -->
+        <TextBlock Grid.Row="0"
+                   Margin="8,4">
+            <Run Text="Step 1:" FontWeight="Bold"/>
+            <Run Text="Set ConsumerKey and ConsumerSecret. Then press Open authorization page."/>
+        </TextBlock>
+        <Grid Grid.Row="1"
+              Margin="4,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Content="ConsumerKey"/>
+            <TextBox Grid.Row="0" Grid.Column="1"
+                     Height="20" Margin="4"
+                     VerticalContentAlignment="Center"
+                     Text="{Binding ConsumerKey, UpdateSourceTrigger=PropertyChanged, Delay=100}"/>
+            <Label Grid.Row="1" Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Content="ConsumerSecret"/>
+            <TextBox Grid.Row="1" Grid.Column="1"
+                     Height="20" Margin="4"
+                     VerticalContentAlignment="Center"
+                     Text="{Binding ConsumerSecret, UpdateSourceTrigger=PropertyChanged, Delay=100}"/>
+        </Grid>
+        <Button Grid.Row="2"
+                Width="200" Height="30" Margin="8,4" HorizontalAlignment="Right"
+                VerticalContentAlignment="Center"
+                Content="Open authorization page"
+                Command="{Binding OpenCommand}"/>
+
+        <!-- Step 2 -->
+        <TextBlock Grid.Row="3"
+                   Margin="8,4">
+            <Run Text="Step 2:" FontWeight="Bold"/>
+            <Run Text="Copy PIN from authorization page. Then press Complete authorization."/>
+        </TextBlock>
+        <Grid Grid.Row="4"
+              Margin="4,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Content="PIN"/>
+            <TextBox Grid.Row="0" Grid.Column="1"
+                     Height="20" Margin="4"
+                     VerticalContentAlignment="Center"
+                     Text="{Binding Pin, UpdateSourceTrigger=PropertyChanged, Delay=100}"/>
+        </Grid>
+        <Button Grid.Row="5"
+                Width="200" Height="30" Margin="8,4" HorizontalAlignment="Right"
+                VerticalContentAlignment="Center"
+                Content="Complete authorization"
+                Command="{Binding CompleteCommand}"/>
+
+        <!-- Step 3 -->
+        <TextBlock Grid.Row="6"
+                   Margin="8,4">
+            <Run Text="Step 3:" FontWeight="Bold"/>
+            <Run Text="Record AccesToken and AccessTokenSecret in safe place."/>
+        </TextBlock>
+        <Grid Grid.Row="7"
+              Margin="4,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Content="AccessToken"/>
+            <TextBox Grid.Row="0" Grid.Column="1"
+                     Height="20" Margin="4"
+                     VerticalContentAlignment="Center" IsReadOnly="True"
+                     Text="{Binding AccessToken}"/>
+            <Label Grid.Row="1" Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Content="AccessTokenSecret"/>
+            <TextBox Grid.Row="1" Grid.Column="1"
+                     Height="20" Margin="4"
+                     VerticalContentAlignment="Center" IsReadOnly="True"
+                     Text="{Binding AccessTokenSecret}"/>
+        </Grid>
+    </Grid>
+</Window>
