@@ -10,12 +10,12 @@ Just tweet @CSharpPlay {your C# script}. The length of script is up to 128 (= 14
 
 In C# script, _expression_ and _statement_ will be handled in different manner. They are differentiated by ending semicolon. The rule is similar to that of LinqPad but not the same.
 
- - _Expression_ - No ending semicolon exists. The result will be returned and outputted. The following is an expression and the result value, `3` will be automatically outputted.
+ - _Expression_ - No ending semicolon exists. The result will be automatically returned and outputted. The following is an expression and the result value, `3` will be outputted.
  ```csharp
 1 + 2
  ```
 
- - _Statement_ - An ending semicolon exists. The result will not be returned and so if you intend to output the value, you will need to use `return` or  `Console.Write/WriteLine`. The following is a statement and to output the result value, you need to insert `return`.
+ - _Statement_ - An ending semicolon exists. The result will not be returned and so if you intend to output the value, you will need to use `return` or  `Console.Write/WriteLine`. The following is a statement and `return` is inserted to output the result value.
   ```csharp
 return 1 + 2;
  ```
@@ -66,7 +66,7 @@ The following namespaces are imported by default and so you can use them without
 
 Some namespaces such as `System.IO` and `System.Net` and methods are unusable in order to prevent abuses. `#r` and `#load` directives are the same.
 
-##Library
+##Libraries
 
  - [Microsoft.CodeAnalysis.CSharp](https://github.com/dotnet/roslyn)
  - [Interactive Extensions](http://rx.codeplex.com/)
