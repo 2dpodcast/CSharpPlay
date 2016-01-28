@@ -68,7 +68,7 @@ Some namespaces such as `System.IO` and `System.Net` and methods are unusable in
 
 ##Library
 
- - [Microsoft.CodeAnalysis](https://github.com/dotnet/roslyn)
+ - [Microsoft.CodeAnalysis.CSharp](https://github.com/dotnet/roslyn)
  - [Interactive Extensions](http://rx.codeplex.com/)
  - [LinqToTwitter](https://linqtotwitter.codeplex.com/)
  - [Newetonsoft.Json](http://www.newtonsoft.com/json)
