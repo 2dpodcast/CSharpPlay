@@ -1,12 +1,12 @@
-﻿CSharp Play
-===========
+﻿#  CSharp Play
+
 CSharp Play is a C# script playground on Twitter. You can send a C# script to [@CSharpPlay](https://twitter.com/CSharpPlay) by mention and receive the result by reply.
 
-##Usage
+## Usage
 
 Just tweet @CSharpPlay {your C# script}. The length of script is up to 128 (= 140 - 12) characters. You can enjoy C# 6.0 features.
 
-###Expression and Statement
+### Expression and Statement
 
 In C# script, _expression_ and _statement_ will be handled in different manner. They are differentiated by ending semicolon. The rule is similar to that of LinqPad but not the same.
 
@@ -27,7 +27,7 @@ int b = 2;
 a + b
  ```
 
-###Dump extension method
+### Dump extension method
 
 In this playground, you can use LinqPad like `Dump` extension method to output values. It is shorter than `Console.Write/WriteLine` and so useful to save the number of characters. The following example will output `3`.
 ```csharp
@@ -46,7 +46,7 @@ For some types, there are overloads that take string format. The following will 
 new DateTime(2016, 1, 1).Dump("yyyy/MM/dd");
 ```
 
-###Imported namespaces
+### Imported namespaces
 
 The following namespaces are imported by default and so you can use them without adding `using` directive.
 
@@ -66,13 +66,9 @@ The following namespaces are imported by default and so you can use them without
 
 Some namespaces such as `System.IO` and `System.Net` and methods are unusable in order to prevent abuses. `#r` and `#load` directives are the same.
 
-##Libraries
+## Libraries
 
  - [Microsoft.CodeAnalysis.CSharp](https://github.com/dotnet/roslyn)
  - [Interactive Extensions](http://rx.codeplex.com/)
  - [LinqToTwitter](https://linqtotwitter.codeplex.com/)
  - [Newetonsoft.Json](http://www.newtonsoft.com/json)
-
-##License
-
-Not decided yet.
